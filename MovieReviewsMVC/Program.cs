@@ -1,3 +1,7 @@
+using MovieReviewsMVC.Models;
+using Microsoft.EntityFrameworkCore;
+using MovieReviewsMVC.Models;
+
 namespace MovieReviewsMVC
 {
     public class Program
@@ -8,6 +12,8 @@ namespace MovieReviewsMVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<MovieReviewsDbContext>(options => options.UseSqlServer(
+                builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
