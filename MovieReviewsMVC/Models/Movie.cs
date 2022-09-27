@@ -22,7 +22,12 @@ namespace MovieReviewsMVC.Models
         
         [StringLength(60, MinimumLength = 3)]
         public string? Director { get; set; }
+
+        public virtual List<Review> Reviews { get; set; } = new List<Review>();
     }
 }
+
+
+
 // Scaffold-DbContext 'Data Source=TROYSPC;Initial Catalog=MovieReviewsMvc;Integrated Security=SSPI;' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 // add-migration MovieReviewsMvc
